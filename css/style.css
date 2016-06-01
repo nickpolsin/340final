@@ -200,7 +200,7 @@ h1 {
   text-align: left;
   margin: 6px 0px 6px 0px; }
 
-#quote-tag {
+.quote-tag {
   color: #a3a3a3;
   font-size: 14px;
   line-height: 16px;
@@ -210,6 +210,28 @@ h1 {
   margin: 16px auto 16px auto;
   text-align: left;
   width: 80%; }
+
+.news-article {
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 10px 5px 0px 5px;
+  margin: 40px auto 40px auto;
+  width: 26%; }
+  .news-article:hover {
+    background-color: #D6D6D6; }
+
+.news-article-link {
+  color: #222;
+  text-decoration: none; }
+  .news-article-link:visited {
+    color: #222; }
+
+.news-img {
+  background-color: #467DA3;
+  height: 200px;
+  margin: 0px auto 0px auto;
+  width: 90%;
+  max-width: 90%; }
 
 .red-party {
   color: #A34846; }
@@ -243,5 +265,11 @@ h1 {
   -moz-transition: all 100ms ease-out;
   -o-transition: all 100ms ease-out;
   transition: all 100ms ease-out; }
+
+.transition-all-200 {
+  -webkit-transition: all 200ms ease-out;
+  -moz-transition: all 200ms ease-out;
+  -o-transition: all 200ms ease-out;
+  transition: all 200ms ease-out; }
 
 /*# sourceMappingURL=style.css.map */
