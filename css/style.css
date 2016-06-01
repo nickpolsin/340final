@@ -1,6 +1,5 @@
 .nav-bar {
   background-color: white;
-  height: 90px;
   padding: 10px 0px 0px 0px;
   position: fixed;
   top: 0px;
@@ -19,6 +18,7 @@
       height: 80px;
       width: 223px; }
     .nav-bar nav .nav-link {
+      border-bottom: 2px solid transparent;
       color: #222;
       font-size: 24px;
       font-weight: bold;
@@ -29,10 +29,38 @@
       width: 160px; }
       .nav-bar nav .nav-link:visited {
         color: #222; }
+      .nav-bar nav .nav-link:hover {
+        border-bottom: 2px solid #555555;
+        color: #555555; }
   .nav-bar .nav-bar-hr {
     border-color: #222;
     border-style: solid;
     border-width: 1px; }
+
+#candidate-nav {
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  text-align: center; }
+  #candidate-nav .bio-link {
+    border-bottom: 2px solid transparent;
+    color: darkgoldenrod;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0px 40px 0px 40px;
+    text-decoration: none; }
+    #candidate-nav .bio-link:visited {
+      color: darkgoldenrod;
+      text-decoration: none; }
+    #candidate-nav .bio-link:hover {
+      border-bottom: 2px solid #886308;
+      color: #886308;
+      cursor: pointer; }
 
 .container-60 {
   margin: 0px auto 0px auto;
@@ -41,6 +69,28 @@
 .content-container {
   margin: 160px 0px 80px 0px;
   text-align: center; }
+  .content-container h2 {
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 38px;
+    margin: 20px 0px 10px 0px; }
+
+#shoved-content {
+  margin: 240px 0px 80px 0px; }
+
+.col-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin: 40px 0px 0px 0px;
+  justify-content: space-around;
+  -webkit-flex-flow: row wrap; }
+
+.col-left, .col-right {
+  width: 40%;
+  margin: 0px auto 0px auto; }
 
 body {
   color: #222;
@@ -71,11 +121,16 @@ h1 {
   margin: 4px 0px 4px 0px; }
 
 .candidate-dc {
-  background-color: #D6D6D6;
   border-radius: 6px;
   height: 200px;
-  margin: 20px 0px 20px 0px;
+  margin: 40px 0px 40px 0px;
   text-align: left; }
+
+#democrats .candidate-dc {
+  background-color: #ccdde9; }
+
+#republicans .candidate-dc {
+  background-color: #e9cdcc; }
 
 .candidate-name {
   text-align: right;
@@ -96,6 +151,7 @@ h1 {
 
 .republican-ndc {
   border: 2px solid #7f3837;
+  border-radius: 4px;
   display: inline-block;
   height: 30px;
   margin: 0px 8px 0px 0px;
@@ -104,6 +160,7 @@ h1 {
 
 .democrat-ndc {
   border: 2px solid #37627f;
+  border-radius: 4px;
   display: inline-block;
   height: 30px;
   margin: 0px 8px 0px 0px;
@@ -111,12 +168,48 @@ h1 {
   z-index: 10; }
 
 .dc-bar {
-  height: 30px; }
+  height: 30px;
+  border-radius: 2px; }
   .dc-bar h2 {
     font-size: 18px;
     font-weight: 600;
     line-height: 32px;
     margin: 0px; }
+
+.bio-pic {
+  display: block;
+  margin: 0px auto 0px auto;
+  max-width: 90%; }
+
+#info-table {
+  border: 1px solid #D6D6D6;
+  margin: 0px auto 0px auto;
+  text-align: left;
+  width: 90%; }
+  #info-table td {
+    border: 1px solid #D6D6D6;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid transparent;
+    font-size: 16px;
+    line-height: 20px; }
+  #info-table .last-td {
+    border-bottom: 1px solid transparent; }
+
+#recent-quote {
+  text-align: left;
+  margin: 6px 0px 6px 0px; }
+
+#quote-tag {
+  color: #a3a3a3;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: right; }
+
+.bio-content {
+  margin: 16px auto 16px auto;
+  text-align: left;
+  width: 80%; }
 
 .red-party {
   color: #A34846; }
