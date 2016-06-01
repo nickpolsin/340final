@@ -1,0 +1,154 @@
+.nav-bar {
+  background-color: white;
+  height: 90px;
+  padding: 10px 0px 0px 0px;
+  position: fixed;
+  top: 0px;
+  width: 60%;
+  z-index: 100; }
+  .nav-bar nav {
+    align-items: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    height: 80px;
+    text-align: center; }
+    .nav-bar nav img {
+      height: 80px;
+      width: 223px; }
+    .nav-bar nav .nav-link {
+      color: #222;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 32px;
+      margin: 0px 20px 0px 20px;
+      padding: 0px;
+      text-decoration: none;
+      width: 160px; }
+      .nav-bar nav .nav-link:visited {
+        color: #222; }
+  .nav-bar .nav-bar-hr {
+    border-color: #222;
+    border-style: solid;
+    border-width: 1px; }
+
+.container-60 {
+  margin: 0px auto 0px auto;
+  width: 60%; }
+
+.content-container {
+  margin: 160px 0px 80px 0px;
+  text-align: center; }
+
+body {
+  color: #222;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  text-rendering: optimizeLegibility; }
+
+h1 {
+  font-weight: 300; }
+
+.parties {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-around;
+  -webkit-flex-flow: row wrap; }
+
+.party-name {
+  font-size: 26px;
+  line-height: 30px;
+  margin-bottom: 4px; }
+
+.party-dc {
+  font-size: 18px;
+  line-height: 22px;
+  margin: 4px 0px 4px 0px; }
+
+.candidate-dc {
+  background-color: #D6D6D6;
+  border-radius: 6px;
+  height: 200px;
+  margin: 20px 0px 20px 0px;
+  text-align: left; }
+
+.candidate-name {
+  text-align: right;
+  margin: 20px 40px 0px 0px; }
+
+.img-bar {
+  height: 100px;
+  margin: 36px 0px 0px 0px; }
+
+.circle-img {
+  border-radius: 50%;
+  display: inline-block;
+  height: 100px;
+  margin: 8px 0px 0px 8px;
+  overflow: hidden;
+  position: relative;
+  width: 100px; }
+
+.republican-ndc {
+  border: 2px solid #7f3837;
+  display: inline-block;
+  height: 30px;
+  margin: 0px 8px 0px 0px;
+  width: 400px;
+  z-index: 10; }
+
+.democrat-ndc {
+  border: 2px solid #37627f;
+  display: inline-block;
+  height: 30px;
+  margin: 0px 8px 0px 0px;
+  width: 400px;
+  z-index: 10; }
+
+.dc-bar {
+  height: 30px; }
+  .dc-bar h2 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 32px;
+    margin: 0px; }
+
+.red-party {
+  color: #A34846; }
+
+.blue-party {
+  color: #467DA3; }
+
+.green-party {
+  color: #5CAE5A; }
+
+.yellow-party {
+  color: #D6C171; }
+
+.red-party-bg {
+  background-color: #A34846; }
+
+.blue-party-bg {
+  background-color: #467DA3; }
+
+.green-party-bg {
+  background-color: #5CAE5A; }
+
+.yellow-party-bg {
+  background-color: #D6C171; }
+
+.remove-margins {
+  margin: 0px; }
+
+.transition-all-100 {
+  -webkit-transition: all 100ms ease-out;
+  -moz-transition: all 100ms ease-out;
+  -o-transition: all 100ms ease-out;
+  transition: all 100ms ease-out; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,186 @@
+// SASS FOR VOTING SYSTEMS VISUALIZATION
+
+// NOTES
+
+// CUSTOM TYPEFACES
+
+// VARIABLES
+$dark-grey: #222
+$light-grey: #D6D6D6
+$off-white: #F0F0F0
+$yellow: #D6C171
+$red: #A34846
+$blue: #467DA3
+$green: #5CAE5A
+$link-teal: teal
+
+$trump-dc: 1239
+$clinton-dc: 1769
+$sanders-dc: 1499
+$cruz-dc: 559
+
+// NAV
+.nav-bar
+  background-color: white
+  height: 90px
+  padding: 10px 0px 0px 0px
+  position: fixed
+  top: 0px
+  width: 60%
+  z-index: 100
+
+  nav
+    align-items: center
+    display: -webkit-box
+    display: -moz-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    height: 80px
+    text-align: center
+
+    img
+      height: 80px
+      width: 223px
+
+    .nav-link
+      color: $dark-grey
+      font-size: 24px
+      font-weight: bold
+      line-height: 32px
+      margin: 0px 20px 0px 20px
+      padding: 0px
+      text-decoration: none
+      width: 160px
+
+      &:visited
+        color: $dark-grey
+
+  .nav-bar-hr
+    border-color: $dark-grey
+    border-style: solid
+    border-width: 1px
+
+// CONTAINERS
+.container-60
+  margin: 0px auto 0px auto
+  width: 60%
+
+.content-container
+  margin: 160px 0px 80px 0px
+  text-align: center
+
+// GENERAL STYLING
+body
+  color: $dark-grey
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  margin: 0px
+  text-rendering: optimizeLegibility
+
+h1
+  font-weight: 300
+
+// INDEX
+.parties
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  justify-content: space-around
+  -webkit-flex-flow: row wrap
+
+.party-name
+  font-size: 26px
+  line-height: 30px
+  margin-bottom: 4px
+
+.party-dc
+  font-size: 18px
+  line-height: 22px
+  margin: 4px 0px 4px 0px
+
+.candidate-dc
+  background-color: $light-grey
+  border-radius: 6px
+  height: 200px
+  margin: 20px 0px 20px 0px
+  text-align: left
+
+.candidate-name
+  text-align: right
+  margin: 20px 40px 0px 0px
+
+.img-bar
+  height: 100px
+  margin: 36px 0px 0px 0px
+
+.circle-img
+  border-radius: 50%
+  display: inline-block
+  height: 100px
+  margin: 8px 0px 0px 8px
+  overflow: hidden
+  position: relative
+  width: 100px
+
+.republican-ndc
+  border: 2px solid darken($red, 10%)
+  display: inline-block
+  height: 30px
+  margin: 0px 8px 0px 0px
+  width: 400px
+  z-index: 10
+
+.democrat-ndc
+  border: 2px solid darken($blue, 10%)
+  display: inline-block
+  height: 30px
+  margin: 0px 8px 0px 0px
+  width: 400px
+  z-index: 10
+
+.dc-bar
+  height: 30px
+
+  h2
+    font-size: 18px
+    font-weight: 600
+    line-height: 32px
+    margin: 0px
+
+// CONTENT
+
+// CLASSES
+.red-party
+  color: $red
+
+.blue-party
+  color: $blue
+
+.green-party
+  color: $green
+
+.yellow-party
+  color: $yellow
+
+.red-party-bg
+  background-color: $red
+
+.blue-party-bg
+  background-color: $blue
+
+.green-party-bg
+  background-color: $green
+
+.yellow-party-bg
+  background-color: $yellow
+
+.remove-margins
+  margin: 0px
+
+.transition-all-100
+  -webkit-transition: all 100ms ease-out
+  -moz-transition: all 100ms ease-out
+  -o-transition: all 100ms ease-out
+  transition: all 100ms ease-out
