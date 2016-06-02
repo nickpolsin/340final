@@ -11,9 +11,9 @@ $(function() {
 
   for (var prop in dc_data) {
     if (i < 2) {
-      $("#" + prop).css("width", "" + (dc_data[prop] / 5.9575));
+      $("#" + prop).css("width", "" + (dc_data[prop] / 11.915));
     } else {
-      $("#" + prop).css("width", "" + (dc_data[prop] / 3.0925));
+      $("#" + prop).css("width", "" + (dc_data[prop] / 6.185));
     }
 
     i++;
