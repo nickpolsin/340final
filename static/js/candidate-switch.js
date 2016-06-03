@@ -37,7 +37,11 @@ $(function() {
     console.log(candidate_data);
   };
 
-  //console.log(candidate_data);
+  console.log(candidate_data);
+
+  /*var clinton_data = {
+
+  };*/
 
   $("#bio-clinton").click(function() {
     $("#candidate_name").html(clinton_data.name);
