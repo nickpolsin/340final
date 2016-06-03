@@ -33,10 +33,11 @@ $(function() {
   });
 
   function loadBios(data) {
-    candidate_data = data
+    candidate_data = data;
+    console.log(candidate_data);
   };
 
-  console.log(candidate_data);
+  //console.log(candidate_data);
 
   $("#bio-clinton").click(function() {
     $("#candidate_name").html(clinton_data.name);
