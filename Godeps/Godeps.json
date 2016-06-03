@@ -7,6 +7,15 @@
 	],
 	"Deps": [
 		{
+			"ImportPath": "github.com/PuerkitoBio/goquery",
+			"Comment": "v0.3.2-87-gaeecb06",
+			"Rev": "aeecb06b1e04a72e7d3312468c5b92f6bb2f3459"
+		},
+		{
+			"ImportPath": "github.com/andybalholm/cascadia",
+			"Rev": "3ad29d1ad1c4f2023e355603324348cf1f4b2d48"
+		},
+		{
 			"ImportPath": "github.com/lib/pq",
 			"Comment": "go1.0-cutoff-96-gee1442b",
 			"Rev": "ee1442bda7bd1b6a84e913bdb421cb1874ec629d"
@@ -15,6 +24,14 @@
 			"ImportPath": "github.com/lib/pq/oid",
 			"Comment": "go1.0-cutoff-96-gee1442b",
 			"Rev": "ee1442bda7bd1b6a84e913bdb421cb1874ec629d"
+		},
+		{
+			"ImportPath": "golang.org/x/net/html",
+			"Rev": "c4c3ea71919de159c9e246d7be66deb7f0a39a58"
+		},
+		{
+			"ImportPath": "golang.org/x/net/html/atom",
+			"Rev": "c4c3ea71919de159c9e246d7be66deb7f0a39a58"
 		}
 	]
 }
