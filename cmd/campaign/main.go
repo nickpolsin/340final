@@ -42,7 +42,6 @@ type Article struct {
 
 // CandidateSimple stores only candidate name and delegate count
 type CandidateSimple struct {
-	Firstname            string `json:"first_name"`
 	Lastname             string `json:"last_name"`
 	Pledgeddelegatecount string `json:"count"`
 }
@@ -50,7 +49,7 @@ type CandidateSimple struct {
 func getCounts() []CandidateSimple {
 	var simpleCandidates []CandidateSimple
 
-	rows, err := db.Query("SELECT firstname, lastname, pledgeddelegatecount FROM candidate;")
+	rows, err := db.Query("SELECT lastname, pledgeddelegatecount FROM candidate;")
 	if err != nil {
 		return nil
 	}
@@ -61,7 +60,7 @@ func getCounts() []CandidateSimple {
 
 		// go can scan the columns returned from the select directly into the properties from our object
 		// we need &loc.xxx so that scan can update the properties in memory (&loc.Name means address of the Name property for this instance of loc)
-		err = rows.Scan(&simpleCandidate.Firstname, &simpleCandidate.Lastname, &simpleCandidate.Pledgeddelegatecount)
+		err = rows.Scan(&simpleCandidate.Lastname, &simpleCandidate.Pledgeddelegatecount)
 		if err != nil {
 			return nil
 		}

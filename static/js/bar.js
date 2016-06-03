@@ -1,3 +1,5 @@
+var count_data;
+
 $(document).ready(function() {
   var dc_data = {
     clinton_dc_bar: 1769,
@@ -28,5 +30,7 @@ $(document).ready(function() {
 });
 
 function loadCounts(data) {
-  console.log(data);
+  console.log("returned data: ", data);
+  count_data = data.candidates;
+  console.log("applying data to own variable", count_data);
 };
