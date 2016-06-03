@@ -49,9 +49,9 @@ function shoveArticles() {
 
     var tempImgSource;
     if (articles_data[i].publisher == "ABC News") {
-      tempImgSource = "../resources/img/abc.jpg";
+      tempImgSource = "resources/img/abc.jpg";
     } else if (articles_data[i].publisher == "New York Times") {
-      tempImgSource = "../resources/img/nyt.png";
+      tempImgSource = "resources/img/nyt.png";
     }
 
     var tempTag = articles_data[i].title + " by " + articles_data[i].author_fn + " " + articles_data[i].author_ln + ", published: " + articles_data[i].pub_date;
