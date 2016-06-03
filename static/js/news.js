@@ -34,8 +34,8 @@ $(document).ready(function() {
     var index = quotes_data.length - 1;
 
     for (i = index; i > index - 5; i--) {
-      var tempQtId = "#quote-" + (i - (index - 1));
-      var tempQttId = "#quote-" + (i - (index - 1)) + "-tag";
+      var tempQtId = "#quote-" + ((index + 1) - i);
+      var tempQttId = "#quote-" + ((index + 1)- i) + "-tag";
 
       console.log("QuoteID text: ", tempQtId);
       console.log("QuoteID tag: ", tempQttId);
