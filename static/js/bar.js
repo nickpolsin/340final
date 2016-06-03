@@ -10,7 +10,11 @@ $(document).ready(function() {
 
   for (i = 0; i < count_data.length; i++) {
     var barId = "#" + count_data[i].last_name.toLowerCase() + "_dc_bar";
+    var textId ="#" + count_data[i].last_name.toLowerCase() + "_count";
     var count = parseInt(count_data[i].count);
+
+    $(textId).html(count);
+
     if (i < 2) {
       $(barId).css("width", "" + (count / 11.915));
     } else {
