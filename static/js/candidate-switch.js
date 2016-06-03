@@ -1,10 +1,18 @@
-$(function() {
-  var clinton_data;
-  var sanders_data;
-  var trump_data;
-  var cruz_data;
-  var kasich_data;
+var clinton_data;
+var sanders_data;
+var trump_data;
+var cruz_data;
+var kasich_data;
 
+$(document).ready(function() {
+  $("#candidate_name").html(clinton_data.first_name + " " + clinton_data.last_name);
+  $("#candidate_img").attr("src", "../resources/img/"+clinton_data.img+".jpg");
+  $("#candidate_bio").html(clinton_data.bio);
+  $("#candidate-occupation-data").html(clinton_data.occupation);
+  $("#candidate-party-data").html(clinton_data.party);
+});
+
+$(function() {
   var candidate_data;
   $.ajax({
     type: 'get',
