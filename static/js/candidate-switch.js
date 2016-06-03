@@ -62,13 +62,11 @@ $(function() {
     };
   };
 
-  $.ajax.done(function(response){
-    console.log("clintonData: ", clinton_data);
-    console.log("sandersData: ", sanders_data);
-    console.log("trumpData: ", trump_data);
-    console.log("cruzData: ", cruz_data);
-    console.log("kasichData: ", kasich_data);
-  });
+  console.log("clintonData: ", clinton_data);
+  console.log("sandersData: ", sanders_data);
+  console.log("trumpData: ", trump_data);
+  console.log("cruzData: ", cruz_data);
+  console.log("kasichData: ", kasich_data);
 
   $("#bio-clinton").click(function() {
     $("#candidate_name").html(clinton_data.name);
