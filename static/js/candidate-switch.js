@@ -87,17 +87,15 @@ $(function() {
     console.log(quotes_data);
 
     for (i = 0; i < quotes_data.quotes.length; i++) {
-      console.log("current obj: ", quotes_data.quotes[i]);
-
-      if (quotes_data.quotes[i].last_name = "Clinton") {
+      if (quotes_data.quotes[i].last_name == "Clinton") {
         clinton_data.quotes.push({policy: quotes_data.quotes[i].policy, quote: quotes_data.quotes[i].quote});
-      } else if (quotes_data.quotes[i].last_name = "Sander") {
+      } else if (quotes_data.quotes[i].last_name == "Sanders") {
         sanders_data.quotes.push({policy: quotes_data.quotes[i].policy, quote: quotes_data.quotes[i].quote});
-      } else if (quotes_data.quotes[i].last_name = "Trump") {
+      } else if (quotes_data.quotes[i].last_name == "Trump") {
         trump_data.quotes.push({policy: quotes_data.quotes[i].policy, quote: quotes_data.quotes[i].quote});
-      } else if (quotes_data.quotes[i].last_name = "Cruz") {
+      } else if (quotes_data.quotes[i].last_name == "Cruz") {
         cruz_data.quotes.push({policy: quotes_data.quotes[i].policy, quote: quotes_data.quotes[i].quote});
-      } else if (quotes_data.quotes[i].last_name = "Kasich") {
+      } else if (quotes_data.quotes[i].last_name == "Kasich") {
         kasich_data.quotes.push({policy: quotes_data.quotes[i].policy, quote: quotes_data.quotes[i].quote});
       }
     }
