@@ -113,6 +113,8 @@ $(function() {
     $("#candidate_bio").html(clinton_data.bio);
     $("#candidate-occupation-data").html(clinton_data.occupation);
     $("#candidate-party-data").html(clinton_data.party);
+    $("#recent-quote").html(clinton_data.quotes[clinton_data.quotes.length - 1].quote);
+    $("#quote-tag").html(clinton_data.quotes[clinton_data.quotes.length - 1].policy);
   });
 
   $("#bio-sanders").click(function() {
@@ -121,6 +123,8 @@ $(function() {
     $("#candidate_bio").html(sanders_data.bio);
     $("#candidate-occupation-data").html(sanders_data.occupation);
     $("#candidate-party-data").html(sanders_data.party);
+    $("#recent-quote").html(sanders_data.quotes[sanders_data.quotes.length - 1].quote);
+    $("#quote-tag").html(sanders_data.quotes[sanders_data.quotes.length - 1].policy);
   });
 
   $("#bio-trump").click(function() {
@@ -129,6 +133,8 @@ $(function() {
     $("#candidate_bio").html(trump_data.bio);
     $("#candidate-occupation-data").html(trump_data.occupation);
     $("#candidate-party-data").html(trump_data.party);
+    $("#recent-quote").html(trump_data.quotes[trump_data.quotes.length - 1].quote);
+    $("#quote-tag").html(trump_data.quotes[trump_data.quotes.length - 1].policy);
   });
 
   $("#bio-cruz").click(function() {
@@ -137,6 +143,8 @@ $(function() {
     $("#candidate_bio").html(cruz_data.bio);
     $("#candidate-occupation-data").html(cruz_data.occupation);
     $("#candidate-party-data").html(cruz_data.party);
+    $("#recent-quote").html(cruz_data.quotes[cruz_data.quotes.length - 1].quote);
+    $("#quote-tag").html(cruz_data.quotes[cruz_data.quotes.length - 1].policy);
   });
 
   $("#bio-kasich").click(function() {
@@ -145,6 +153,8 @@ $(function() {
     $("#candidate_bio").html(kasich_data.bio);
     $("#candidate-occupation-data").html(kasich_data.occupation);
     $("#candidate-party-data").html(kasich_data.party);
+    $("#recent-quote").html(kasich_data.quotes[kasich_data.quotes.length - 1].quote);
+    $("#quote-tag").html(kasich_data.quotes[kasich_data.quotes.length - 1].policy);
   });
 });
 
@@ -154,4 +164,6 @@ $(document).ready(function() {
   $("#candidate_bio").html(clinton_data.bio);
   $("#candidate-occupation-data").html(clinton_data.occupation);
   $("#candidate-party-data").html(clinton_data.party);
+  $("#recent-quote").html(clinton_data.quotes[clinton_data.quotes.length - 1].quote);
+  $("#quote-tag").html(clinton_data.quotes[clinton_data.quotes.length - 1].policy);
 });
