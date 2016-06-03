@@ -19,7 +19,7 @@ type Candidate struct {
 	Name      string `json:"name"`
 	Party     string `json:"party"`
 	Birthday  string `json:"birthdate"`
-	Residence string
+	Residence string `json:"residence"`
 	Education string
 }
 
