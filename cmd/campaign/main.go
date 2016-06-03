@@ -268,11 +268,4 @@ func main() {
 	server.ListenAndServe()
 
 	scrapeNews()
-
-	go func() {
-  	for true {
-    	time.Sleep(time.Hour * 24)
-    	scrapeNews()
-  	}
-	}
 }
