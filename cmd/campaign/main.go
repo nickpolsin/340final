@@ -266,6 +266,4 @@ func main() {
 	http.HandleFunc("/Qarticles", articlesHandler)
 	http.HandleFunc("/Qcounts", countsHandler)
 	server.ListenAndServe()
-
-	scrapeNews()
 }

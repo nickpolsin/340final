@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"strings"
@@ -57,6 +56,4 @@ func scrapeNews() {
 			log.Fatal(err)
 		}
 	})
-
-	fmt.Println("Completed import")
 }
