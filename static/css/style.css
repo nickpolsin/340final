@@ -242,8 +242,8 @@ h1 {
   max-width: 90%; }
 
 #show-more {
-  background-color: white;
-  border-color: 1px solid #222;
+  background-color: #f0f0f0;
+  border: 1px solid #D6D6D6;
   border-radius: 6px;
   height: 44px;
   margin: 0px auto 0px auto;
@@ -253,6 +253,9 @@ h1 {
     font-weight: normal;
     line-height: 44px;
     margin: 0px auto 0px auto; }
+  #show-more:hover {
+    background-color: #D6D6D6;
+    border: 1px solid #222; }
 
 .red-party {
   color: #A34846; }

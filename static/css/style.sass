@@ -287,8 +287,8 @@ h1
   max-width: 90%
 
 #show-more
-  background-color: lighten($light-grey, 20%)
-  border-color: 1px solid $dark-grey
+  background-color: lighten($light-grey, 10%)
+  border: 1px solid $light-grey
   border-radius: 6px
   height: 44px
   margin: 0px auto 0px auto
@@ -299,6 +299,10 @@ h1
     font-weight: normal
     line-height: 44px
     margin: 0px auto 0px auto
+
+  &:hover
+    background-color: $light-grey
+    border: 1px solid $dark-grey
 
 // CLASSES
 .red-party
