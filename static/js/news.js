@@ -40,8 +40,8 @@ $(document).ready(function() {
       console.log("QuoteID text: ", tempQtId);
       console.log("QuoteID tag: ", tempQttId);
 
-      //$().html(quotes_data[i].quote);
-      //$().html(quotes_data.first_name + " " quotes_data.last_name + ", " quotes_data.policy);
+      $(tempQtId).html(quotes_data[i].quote);
+      $(tempQttId).html(quotes_data.first_name + " " quotes_data.last_name + ", " quotes_data.policy);
     }
   };
 });
