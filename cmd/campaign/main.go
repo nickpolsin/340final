@@ -29,7 +29,7 @@ func getCandidates() []Candidate {
 	var candidates []Candidate
 	// For simplicity the search area is hardcoded rather than coming from the user
 
-	rows, err := db.Query("SELECT firstname, lastname, partyaffiliation FROM candidate;")
+	rows, err := db.Query("SELECT firstname, lastname, partyaffiliation, occupation FROM candidate;")
 	if err != nil {
 		return nil
 	}
