@@ -9,6 +9,7 @@ $(function() {
   $.ajax({
     type: 'get',
     url: '/Qbios',
+    async: false,
     success: loadBios
   });
 
