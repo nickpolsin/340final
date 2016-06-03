@@ -29,13 +29,13 @@ $(document).ready(function() {
   console.log("all articles recieved: ", articles_data);
 
   pushQuotes();
+
+  function pushQuotes() {
+    var index = quotes_data.length - 1;
+
+    for (i = index; i > index - 5; i--) {
+      $("#quote-" + (i - (index - 1))).html(quotes_data[i].quote);
+      $("#quote-" + (i - (index - 1)) + "-tag").html(quotes_data.first_name + " " quotes_data.last_name + ", " quotes_data.policy);
+    }
+  };
 });
-
-function pushQuotes() {
-  var index = quotes_data.length - 1;
-
-  for (i = index; i > index - 5; i--) {
-    $("#quote-" + (i - (index - 1))).html(quotes_data[i].quote);
-    $("#quote-" + (i - (index - 1)) + "-tag").html(quotes_data.first_name + " " quotes_data.last_name + ", " quotes_data.policy);
-  }
-};
