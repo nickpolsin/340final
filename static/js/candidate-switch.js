@@ -6,13 +6,11 @@ $(function() {
   var kasich_data;
 
   var candidate_data;
-  JSON.parse(
-    $.ajax({
-      type: 'get',
-      url: '/Qbios',
-      success: loadBios
-    });
-  );
+  $.ajax({
+    type: 'get',
+    url: '/Qbios',
+    success: loadBios
+  });
 
   function loadBios(data) {
     candidate_data = data;
