@@ -28,7 +28,10 @@ $(document).ready(function() {
   console.log("all quotes recieved: ", quotes_data);
   console.log("all articles recieved: ", articles_data);
 
+  shoveQuotes();
+});
 
+function shoveQuotes() {
   var index = quotes_data.length - 1;
 
   for (i = index; i > index - 5; i--) {
@@ -39,6 +42,6 @@ $(document).ready(function() {
     console.log("QuoteID tag: ", tempQttId);
 
     $(tempQtId).html(quotes_data[i].quote);
-    $(tempQttId).html(quotes_data.first_name + " " quotes_data.last_name + ", " quotes_data.policy);
+    $(tempQttId).html(quotes_data[i].first_name + " " quotes_data[i].last_name + ", " quotes_data[i].policy);
   }
-});
+};
