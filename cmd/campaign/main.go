@@ -266,4 +266,13 @@ func main() {
 	http.HandleFunc("/Qarticles", articlesHandler)
 	http.HandleFunc("/Qcounts", countsHandler)
 	server.ListenAndServe()
+
+	scrapeNews()
+
+	go func() {
+  	for true {
+    	time.Sleep(time.Hour * 24)
+    	scrapeNews()
+  	}
+	}
 }
