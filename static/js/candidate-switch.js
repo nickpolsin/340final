@@ -78,6 +78,7 @@ $(function() {
 
   function loadQuotes(data) {
     quotes_data = data;
+    console.log(quotes_data);
 
     for (obj in quotes_data.quotes) {
       if (obj.last_name = "Clinton") {
