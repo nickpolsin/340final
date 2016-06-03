@@ -5,9 +5,7 @@ var currentQuoteIndex;
 
 $("#show-more-quotes").click(function() {
   console.log("next five will start at: ", currentQuoteIndex - 5);
-  if (currentQuoteIndex - 5 > 0) {
-    $(".recent-quotes-container").append("<div id='quote-1-container' class='recent-quote-container'><p id='quote-1' class='quotes-text'>THIS IS A TEST</p><p id='quote-1-tag' class='quote-tag'>TESTING THE TAG</p></div>");
-  }
+  $(".recent-quotes-container").append("<div id='quote-1-container' class='recent-quote-container'><p id='quote-1' class='quotes-text'>THIS IS A TEST</p><p id='quote-1-tag' class='quote-tag'>TESTING THE TAG</p></div>");
 });
 
 $(document).ready(function() {
