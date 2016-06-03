@@ -16,9 +16,9 @@ var (
 
 // Candidate stores coordinates as numeric strings
 type Candidate struct {
-	FirstName        string `json:"first_name"`
-	LastName         string `json:"last_name"`
-	PartyAffiliation string `json:"party"`
+	Firstname        string `json:"first_name"`
+	Lastname         string `json:"last_name"`
+	Partyaffiliation string `json:"party"`
 	Occupation       string `json:"occupation"`
 }
 
@@ -40,7 +40,7 @@ func getCandidates() []Candidate {
 
 		// go can scan the columns returned from the select directly into the properties from our object
 		// we need &loc.xxx so that scan can update the properties in memory (&loc.Name means address of the Name property for this instance of loc)
-		err = rows.Scan(&candidate.FirstName, &candidate.LastName, &candidate.PartyAffiliation, &candidate.Occupation)
+		err = rows.Scan(&candidate.Firstname, &candidate.Lastname, &candidate.Partyaffiliation, &candidate.Occupation)
 		if err != nil {
 			return nil
 		}
