@@ -30,6 +30,42 @@ type Quote struct {
 	Quote      string `json:"quote"`
 }
 
+// Article stores attributes needed for articles
+type Article struct {
+	Publisher       string `json:"publisher"`
+	Authorfirstname string `json:"author-fn"`
+	Authorlastname  string `json:"author-ln"`
+	Datepublished   string `json:"pub-date"`
+	Link            string `json:"link"`
+	Title           string `json:"title"`
+}
+
+func getArticles() []Article {
+	var articles []Article
+
+	rows, err := db.Query("SELECT publisher, authorfirstname, authorlastname, datepublished, link, title FROM article;")
+	if err != nil {
+		return nil
+	}
+
+	for rows.Next() {
+		// for each row, we create an empty Location object
+		var article Article
+
+		// go can scan the columns returned from the select directly into the properties from our object
+		// we need &loc.xxx so that scan can update the properties in memory (&loc.Name means address of the Name property for this instance of loc)
+		err = rows.Scan(&article.Publisher, &article.Authorfirstname, &article.Authorlastname, &article.Datepublished, &article.Link, &article.Title)
+		if err != nil {
+			return nil
+		}
+		// append each intermediate loc to our array
+		articles = append(articles, article)
+	}
+	rows.Close()
+
+	return articles
+}
+
 func getQuotes() []Quote {
 	var quotes []Quote
 
@@ -131,6 +167,28 @@ func quotesHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
+func articlesHandler(w http.ResponseWriter, r *http.Request) {
+	switch r.Method {
+	default: // We're only supporting GET in this incarnation
+		articles := getArticles()
+
+		// This struct holds all of the context that my index template needs to render
+		context := struct {
+			Articles []Article `json:"articles"`
+		}{
+			articles,
+		}
+
+		jsonified, err := json.Marshal(context)
+		if err != nil {
+			panic(err)
+		}
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(jsonified)
+	}
+
+}
+
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -151,5 +209,6 @@ func main() {
 
 	http.HandleFunc("/Qbios", candidatesHandler)
 	http.HandleFunc("/Qquotes", quotesHandler)
+	http.HandleFunc("/Qarticles", articlesHandler)
 	server.ListenAndServe()
 }

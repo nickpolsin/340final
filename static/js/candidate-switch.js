@@ -6,12 +6,6 @@ var kasich_data;
 
 var quotes_data;
 
-var clinton_quotes;
-var sanders_quotes;
-var trump_quotes;
-var cruz_quotes;
-var kasich_quotes;
-
 $(function() {
   var candidate_data;
   $.ajax({
@@ -84,7 +78,6 @@ $(function() {
 
   function loadQuotes(data) {
     quotes_data = data;
-    console.log(quotes_data);
 
     for (i = 0; i < quotes_data.quotes.length; i++) {
       if (quotes_data.quotes[i].last_name == "Clinton") {
@@ -99,7 +92,7 @@ $(function() {
         kasich_data.quotes.push({policy: quotes_data.quotes[i].policy, quote: quotes_data.quotes[i].quote});
       }
     }
-  }
+  };
 
   console.log("clinton data: ", clinton_data);
   console.log("sanders data: ", sanders_data);
