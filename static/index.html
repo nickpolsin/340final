@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Election Update</title>
+    <link rel="icon" href="resources/img/icon.png">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="js/bar.js"></script>
+  </head>
+  <body>
+    <div class="container-60">
+      <div class="nav-bar">
+        <nav>
+          <a href="index.html"><img id="site-logo" src="resources/img/logo.jpg" alt="logo" /></a>
+          <a id="d-counts" href="index.html" class="nav-link transition-all-100">Delegate Count</a>
+          <a id="bios" href="pages/bios.html" class="nav-link transition-all-100">Candidate Information</a>
+          <a id="news" href="pages/news.html" class="nav-link transition-all-100">News and Events</a>
+        </nav>
+        <hr class="nav-bar-hr">
+      </div>
+
+      <div class="content-container">
+        <h1 class="page-title">Presidential Candidates Delegate Counts</h1>
+        <div class="parties">
+          <div id="democrats" class="party">
+            <h1 class="party-name">Democratic Party</h1>
+            <h3 class="party-dc">2382 To Win</h3>
+            <div class="candidate-dc">
+              <h1 class="candidate-name">Hillary Clinton</h1>
+              <div class="img-bar">
+                <img class="circle-img" src="resources/img/clinton.png" alt="" />
+                <div class="democrat-ndc">
+                  <div id="clinton_dc_bar" class="dc-bar blue-party-bg">
+                    <h2>1769</h2>
+                  </div>
+                  <div class="win-point"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="candidate-dc">
+              <h1 class="candidate-name">Bernie Sanders</h1>
+              <div class="img-bar">
+                <img class="circle-img" src="resources/img/sanders.png" alt="" />
+                <div class="democrat-ndc">
+                  <div id="sanders_dc_bar" class="dc-bar blue-party-bg">
+                    <h2>1499</h2>
+                  </div>
+                  <div class="win-point"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="republicans" class="party">
+            <h1 class="party-name">Republican Party</h1>
+            <h3 class="party-dc">1237 To Win</h3>
+            <div class="candidate-dc">
+              <h1 class="candidate-name">Donald Trump</h1>
+              <div class="img-bar">
+                <img class="circle-img" src="resources/img/trump.png" alt="" />
+                <div class="republican-ndc">
+                  <div id="trump_dc_bar" class="dc-bar red-party-bg">
+                    <h2>1239</h2>
+                  </div>
+                  <div class="win-point"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="candidate-dc">
+              <h1 class="candidate-name">Ted Cruz</h1>
+              <div class="img-bar">
+                <img class="circle-img" src="resources/img/cruz.png" alt="" />
+                <div class="republican-ndc">
+                  <div id="cruz_dc_bar" class="dc-bar red-party-bg">
+                    <h2>559</h2>
+                  </div>
+                  <div class="win-point"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="candidate-dc">
+              <h1 class="candidate-name">John Kasich</h1>
+              <div class="img-bar">
+                <img class="circle-img" src="resources/img/kasich.png" alt="" />
+                <div class="republican-ndc">
+                  <div id="kasich_dc_bar" class="dc-bar red-party-bg">
+                    <h2>161</h2>
+                  </div>
+                  <div class="win-point"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

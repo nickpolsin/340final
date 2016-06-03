@@ -1,0 +1,327 @@
+// SASS FOR VOTING SYSTEMS VISUALIZATION
+
+// NOTES
+
+// CUSTOM TYPEFACES
+
+// VARIABLES
+$dark-grey: #222
+$light-grey: #D6D6D6
+$off-white: #F0F0F0
+$yellow: #D6C171
+$red: #A34846
+$blue: #467DA3
+$green: #5CAE5A
+$link-teal: teal
+$link-goldy: darkgoldenrod
+
+$trump-dc: 1239
+$clinton-dc: 1769
+$sanders-dc: 1499
+$cruz-dc: 559
+
+// NAV
+.nav-bar
+  background-color: white
+  padding: 10px 0px 0px 0px
+  position: fixed
+  top: 0px
+  width: 60%
+  z-index: 100
+
+  nav
+    align-items: center
+    display: -webkit-box
+    display: -moz-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    height: 80px
+    text-align: center
+
+    img
+      height: 80px
+      width: 223px
+
+    .nav-link
+      border-bottom: 2px solid transparent
+      color: $dark-grey
+      font-size: 24px
+      font-weight: bold
+      line-height: 32px
+      margin: 0px 20px 0px 20px
+      padding: 0px
+      text-decoration: none
+      width: 160px
+
+      &:visited
+        color: $dark-grey
+
+      &:hover
+        border-bottom: 2px solid lighten($dark-grey, 20%)
+        color: lighten($dark-grey, 20%)
+
+  .nav-bar-hr
+    border-color: $dark-grey
+    border-style: solid
+    border-width: 1px
+
+#candidate-nav
+  align-items: center
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  height: 80px
+  justify-content: space-between
+  text-align: center
+
+  .bio-link
+    border-bottom: 2px solid transparent
+    color: $link-goldy
+    font-size: 18px
+    line-height: 24px
+    margin: 0px 40px 0px 40px
+    text-decoration: none
+
+    &:visited
+      color: $link-goldy
+      text-decoration: none
+
+    &:hover
+      border-bottom: 2px solid darken($link-goldy, 10%)
+      color: darken($link-goldy, 10%)
+      cursor: pointer
+
+// CONTAINERS
+.container-60
+  margin: 0px auto 0px auto
+  width: 60%
+
+.content-container
+  margin: 160px 0px 80px 0px
+  text-align: center
+
+  h2
+    font-size: 24px
+    font-weight: normal
+    line-height: 38px
+    margin: 20px 0px 10px 0px
+
+#shoved-content
+  margin: 240px 0px 80px 0px
+
+.col-flex
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  margin: 40px 0px 0px 0px
+  justify-content: space-around
+  -webkit-flex-flow: row wrap
+
+.col-left, .col-right
+  width: 40%
+  margin: 0px auto 0px auto
+
+// GENERAL STYLING
+body
+  color: $dark-grey
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  margin: 0px
+  text-rendering: optimizeLegibility
+
+h1
+  font-weight: 300
+
+// INDEX
+.parties
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  justify-content: space-around
+  -webkit-flex-flow: row wrap
+
+.party-name
+  font-size: 26px
+  line-height: 30px
+  margin-bottom: 4px
+
+.party-dc
+  font-size: 18px
+  line-height: 22px
+  margin: 4px 0px 4px 0px
+
+.candidate-dc
+  border-radius: 6px
+  height: 200px
+  margin: 40px 0px 40px 0px
+  text-align: left
+
+#democrats
+  .candidate-dc
+    background-color: lighten($blue, 40%)
+
+#republicans
+  .candidate-dc
+    background-color: lighten($red, 40%)
+
+.candidate-name
+  text-align: right
+  margin: 20px 40px 0px 0px
+
+.img-bar
+  height: 100px
+  margin: 0px
+
+.circle-img
+  border-radius: 50%
+  display: inline-block
+  height: 100px
+  margin: 8px 0px 0px 8px
+  overflow: hidden
+  position: relative
+  width: 100px
+
+.republican-ndc
+  border: 2px solid darken($red, 10%)
+  border-radius: 4px
+  display: inline-block
+  height: 30px
+  margin: 0px 8px 0px 0px
+  width: 400px
+  z-index: 10
+
+.democrat-ndc
+  border: 2px solid darken($blue, 10%)
+  border-radius: 4px
+  display: inline-block
+  height: 30px
+  margin: 0px 8px 0px 0px
+  width: 400px
+  z-index: 10
+
+.dc-bar
+  border-radius: 2px
+  height: 30px
+
+  h2
+    font-size: 18px
+    font-weight: 600
+    line-height: 32px
+    margin: 0px
+
+.win-point
+  background-color: $link-goldy
+  height: 30px
+  position: relative
+  top: -30px
+  left: 198px
+  width: 4px
+
+// CONTENT
+.bio-pic
+  display: block
+  margin: 0px auto 0px auto
+  max-width: 90%
+
+#info-table
+  border: 1px solid $light-grey
+  margin: 0px auto 0px auto
+  text-align: left
+  width: 90%
+
+  td
+    border: 1px solid $light-grey
+    border-left: none
+    border-right: none
+    border-top: 1px solid transparent
+    font-size: 16px
+    line-height: 20px
+
+  .last-td
+    border-bottom: 1px solid transparent
+
+
+#recent-quote
+  text-align: left
+  margin: 6px 0px 6px 0px
+
+.quote-tag
+  color: darken($light-grey, 20%)
+  font-size: 14px
+  line-height: 16px
+  text-align: right
+
+.bio-content
+  margin: 16px auto 16px auto
+  text-align: left
+  width: 80%
+
+.news-article
+  background-color: transparent
+  border-radius: 4px
+  padding: 10px 5px 0px 5px
+  margin: 40px auto 40px auto
+  width: 26%
+
+  &:hover
+    background-color: $light-grey
+
+.news-article-link
+  color: $dark-grey
+  text-decoration: none
+
+  &:visited
+    color: $dark-grey
+
+.news-img
+  background-color: $blue
+  height: 200px
+  margin: 0px auto 0px auto
+  width: 90%
+  max-width: 90%
+
+// CLASSES
+.red-party
+  color: $red
+
+.blue-party
+  color: $blue
+
+.green-party
+  color: $green
+
+.yellow-party
+  color: $yellow
+
+.red-party-bg
+  background-color: $red
+
+.blue-party-bg
+  background-color: $blue
+
+.green-party-bg
+  background-color: $green
+
+.yellow-party-bg
+  background-color: $yellow
+
+.remove-margins
+  margin: 0px
+
+.transition-all-100
+  -webkit-transition: all 100ms ease-out
+  -moz-transition: all 100ms ease-out
+  -o-transition: all 100ms ease-out
+  transition: all 100ms ease-out
+
+.transition-all-200
+  -webkit-transition: all 200ms ease-out
+  -moz-transition: all 200ms ease-out
+  -o-transition: all 200ms ease-out
+  transition: all 200ms ease-out
