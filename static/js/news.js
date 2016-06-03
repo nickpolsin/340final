@@ -38,13 +38,9 @@ function shoveQuotes() {
     var tempQtId = "#quote-" + ((index + 1) - i);
     var tempQttId = "#quote-" + ((index + 1)- i) + "-tag";
 
-    console.log("QuoteID text: ", tempQtId);
-    console.log("QuoteID tag: ", tempQttId);
+    var tempTag = quotes_data[i].first_name + " " + quotes_data[i].last_name + ", " + quotes_data[i].policy;
 
-    var tempTag = quotes_data[i].first_name + " " quotes_data[i].last_name + ", " quotes_data[i].policy;
-    console.log(tag);
-
-    //$(tempQtId).html(quotes_data[i].quote);
-    //$(tempQttId).html(tempTag);
+    $(tempQtId).html(quotes_data[i].quote);
+    $(tempQttId).html(tempTag);
   }
 };
