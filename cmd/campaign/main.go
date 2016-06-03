@@ -26,50 +26,28 @@ type Candidate struct {
 func getCandidates() []Candidate {
 	// Store the results
 
-	//var candidates []Candidate
+	var candidates []Candidate
 	// For simplicity the search area is hardcoded rather than coming from the user
-	/*
-		rows, err := db.Query("SELECT firstname, lastname, partyaffiliation FROM candidate;")
+
+	rows, err := db.Query("SELECT firstname, lastname, partyaffiliation FROM candidate;")
+	if err != nil {
+		return nil
+	}
+
+	for rows.Next() {
+		// for each row, we create an empty Location object
+		var candidate Candidate
+
+		// go can scan the columns returned from the select directly into the properties from our object
+		// we need &loc.xxx so that scan can update the properties in memory (&loc.Name means address of the Name property for this instance of loc)
+		err = rows.Scan(&candidate.FirstName, &candidate.LastName, &candidate.PartyAffiliation, &candidate.Occupation)
 		if err != nil {
 			return nil
 		}
-
-		for rows.Next() {
-			// for each row, we create an empty Location object
-			var candidate Candidate
-
-			// go can scan the columns returned from the select directly into the properties from our object
-			// we need &loc.xxx so that scan can update the properties in memory (&loc.Name means address of the Name property for this instance of loc)
-			err = rows.Scan(&candidate.FirstName, &candidate.LastName, &candidate.PartyAffiliation, &candidate.Occupation)
-			if err != nil {
-				return nil
-			}
-			// append each intermediate loc to our array
-			candidates = append(candidates, candidate)
-		}
-		rows.Close()
-	*/
-
-	var candidates = []Candidate{
-		{
-			FirstName:        "Hillary",
-			LastName:         "Clinton",
-			PartyAffiliation: "Democratic",
-			Occupation:       "Politician",
-		},
-		{
-			FirstName:        "Bernie",
-			LastName:         "Sanders",
-			PartyAffiliation: "Democratic",
-			Occupation:       "Politician",
-		},
-		{
-			FirstName:        "Donald",
-			LastName:         "Trump",
-			PartyAffiliation: "Republican",
-			Occupation:       "Real Estate",
-		},
+		// append each intermediate loc to our array
+		candidates = append(candidates, candidate)
 	}
+	rows.Close()
 
 	return candidates
 }
