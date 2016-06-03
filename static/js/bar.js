@@ -28,5 +28,5 @@ $(document).ready(function() {
 });
 
 function loadCounts(data) {
-  
+  console.log(data);
 };
