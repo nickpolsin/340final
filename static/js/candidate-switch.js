@@ -12,7 +12,7 @@ $(function() {
     success: loadBios
   });
 
-  ajaxCall().done(function loadBios(data) {
+  function loadBios(data) {
     candidate_data = data;
     console.log(candidate_data);
 
@@ -60,13 +60,15 @@ $(function() {
       img: "kasich",
       bio: "&nbsp;&nbsp;&nbsp;&nbsp;John Richard Kasich (born May 13, 1952) is an American politician, the 69th and current Governor of Ohio, first elected in 2010 and re-elected in 2014.<br><br> &nbsp;&nbsp;&nbsp;&nbsp;Kasich served nine terms as a member of the United States House of Representatives, representing Ohio's 12th congressional district from 1983 to 2001. His tenure in the House included 18 years on the House Armed Services Committee and six years as chairman of the House Budget Committee. He was a key figure in the passage of both welfare reform and the Balanced Budget Act of 1997.<br><br> &nbsp;&nbsp;&nbsp;&nbsp;He was a commentator on Fox News Channel, hosting Heartland with John Kasich from 2001 to 2007. He also worked as an investment banker, serving as managing director of the Lehman Brothers office in Columbus, Ohio.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;In the 2010 Ohio gubernatorial election, Kasich defeated Democratic incumbent Ted Strickland. He was re-elected in 2014, defeating Democrat Ed FitzGerald by 30 percentage points.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Kasich unsuccessfully sought the Republican nomination for president in 2000 and in 2016."
     };
-  });
+  };
 
-  console.log("clintonData: ", clinton_data);
-  console.log("sandersData: ", sanders_data);
-  console.log("trumpData: ", trump_data);
-  console.log("cruzData: ", cruz_data);
-  console.log("kasichData: ", kasich_data);
+  ajaxCall().done(function(response){
+    console.log("clintonData: ", clinton_data);
+    console.log("sandersData: ", sanders_data);
+    console.log("trumpData: ", trump_data);
+    console.log("cruzData: ", cruz_data);
+    console.log("kasichData: ", kasich_data);
+  });
 
   $("#bio-clinton").click(function() {
     $("#candidate_name").html(clinton_data.name);
