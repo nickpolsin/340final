@@ -33,9 +33,9 @@ type Quote struct {
 // Article stores attributes needed for articles
 type Article struct {
 	Publisher       string `json:"publisher"`
-	Authorfirstname string `json:"author-fn"`
-	Authorlastname  string `json:"author-ln"`
-	Datepublished   string `json:"pub-date"`
+	Authorfirstname string `json:"author_fn"`
+	Authorlastname  string `json:"author_ln"`
+	Datepublished   string `json:"pub_date"`
 	Link            string `json:"link"`
 	Title           string `json:"title"`
 }

@@ -1,6 +1,7 @@
 var quotes_data;
 var articles_data;
 
+var currentArticleIndex;
 var currentQuoteIndex;
 
 $("#show-more-quotes").click(function() {
@@ -35,8 +36,33 @@ $(document).ready(function() {
   console.log("all quotes recieved: ", quotes_data);
   console.log("all articles recieved: ", articles_data);
 
+  shoveArticles();
   shoveQuotes();
 });
+
+function shoveArticles() {
+  var index = articles_data.length - 1;
+
+  for (i = index; i > index - 3; i--) {
+    var tempAtleImgId = "#news-img-" + ((index + 1) - i);
+    var tempAtleTagId = "#news-tag-" + ((index + 1)- i);
+
+    var tempImgSource;
+    if (articles_data[i].publisher == "ABC News") {
+      tempImgSource = "abc.jpg";
+    } else if (articles_data[i].publisher == "New York Times") {
+      tempImgSource = "nyt.png";
+    }
+
+    var tempTag = articles_data[i].title + " by " + articles_data[i].author_fn + " " + articles_data[i].author_ln + ", published: " + articles_data[i].pub_date;
+
+    $(tempAtleImgId).attr("src", tempImgSource);
+    $(tempAtleTagId).html(tempTag);
+  }
+
+  currentArticleIndex = index - 3;
+  console.log("current article index: ", currentArticleIndex);
+};
 
 function shoveQuotes() {
   var index = quotes_data.length - 1;
@@ -52,5 +78,5 @@ function shoveQuotes() {
   }
 
   currentQuoteIndex = index - 5;
-  console.log("current index: ", currentQuoteIndex);
+  console.log("current quote index: ", currentQuoteIndex);
 };
