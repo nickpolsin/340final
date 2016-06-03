@@ -24,6 +24,8 @@ type Candidate struct {
 
 // Quote stores policyname and actual quote text
 type Quote struct {
+	Firstname  string `json:"first_name"`
+	Lastname   string `json:"last_name"`
 	Policyname string `json:"policy"`
 	Quote      string `json:"quote"`
 }
@@ -31,7 +33,7 @@ type Quote struct {
 func getQuotes() []Quote {
 	var quotes []Quote
 
-	rows, err := db.Query("SELECT policyname, quote FROM candidatepolicy;")
+	rows, err := db.Query("SELECT candidate.firstname, candidate.lastname, policyname, quote FROM candidatepolicy NATURAL JOIN candidate;")
 	if err != nil {
 		return nil
 	}
@@ -42,7 +44,7 @@ func getQuotes() []Quote {
 
 		// go can scan the columns returned from the select directly into the properties from our object
 		// we need &loc.xxx so that scan can update the properties in memory (&loc.Name means address of the Name property for this instance of loc)
-		err = rows.Scan(&quote.Policyname, &quote.Quote)
+		err = rows.Scan(&quote.Firstname, &quote.Lastname, &quote.Policyname, &quote.Quote)
 		if err != nil {
 			return nil
 		}
