@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
   var dc_data = {
     clinton_dc_bar: 1769,
     sanders_dc_bar: 1499,
@@ -6,6 +6,13 @@ $(function() {
     cruz_dc_bar: 559,
     kasich_dc_bar: 161
   };
+
+  $.ajax({
+    type: 'get',
+    url: '/Qcounts',
+    async: false,
+    success: loadCounts
+  });
 
   var i = 0;
 
@@ -19,3 +26,7 @@ $(function() {
     i++;
   };
 });
+
+function loadCounts(data) {
+  
+};

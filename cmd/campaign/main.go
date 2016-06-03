@@ -40,6 +40,39 @@ type Article struct {
 	Title           string `json:"title"`
 }
 
+// CandidateSimple stores only candidate name and delegate count
+type CandidateSimple struct {
+	Firstname            string `json:"first_name"`
+	Lastname             string `json:"last_name"`
+	Pledgeddelegatecount string `json:"count"`
+}
+
+func getCounts() []CandidateSimple {
+	var simpleCandidates []CandidateSimple
+
+	rows, err := db.Query("SELECT firstname, lastname, pledgeddelegatecount FROM candidate;")
+	if err != nil {
+		return nil
+	}
+
+	for rows.Next() {
+		// for each row, we create an empty Location object
+		var simpleCandidate CandidateSimple
+
+		// go can scan the columns returned from the select directly into the properties from our object
+		// we need &loc.xxx so that scan can update the properties in memory (&loc.Name means address of the Name property for this instance of loc)
+		err = rows.Scan(&simpleCandidate.Firstname, &simpleCandidate.Lastname, &simpleCandidate.Pledgeddelegatecount)
+		if err != nil {
+			return nil
+		}
+		// append each intermediate loc to our array
+		simpleCandidates = append(simpleCandidates, simpleCandidate)
+	}
+	rows.Close()
+
+	return simpleCandidates
+}
+
 func getArticles() []Article {
 	var articles []Article
 
@@ -189,6 +222,28 @@ func articlesHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
+func countsHandler(w http.ResponseWriter, r *http.Request) {
+	switch r.Method {
+	default: // We're only supporting GET in this incarnation
+		counts := getCounts()
+
+		// This struct holds all of the context that my index template needs to render
+		context := struct {
+			Candidates []CandidateSimple `json:"candidates"`
+		}{
+			counts,
+		}
+
+		jsonified, err := json.Marshal(context)
+		if err != nil {
+			panic(err)
+		}
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(jsonified)
+	}
+
+}
+
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -210,5 +265,6 @@ func main() {
 	http.HandleFunc("/Qbios", candidatesHandler)
 	http.HandleFunc("/Qquotes", quotesHandler)
 	http.HandleFunc("/Qarticles", articlesHandler)
+	http.HandleFunc("/Qcounts", countsHandler)
 	server.ListenAndServe()
 }
