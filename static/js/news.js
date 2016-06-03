@@ -1,6 +1,14 @@
 var quotes_data;
 var articles_data;
 
+var currentQuoteIndex;
+
+$("#show-more-quotes").click(function() {
+  if (currentQuoteIndex - 5 > 0) {
+    $(".recent-quotes-container").append("<div id='quote-1-container' class='recent-quote-container'><p id='quote-1' class='quotes-text'></p><p id='quote-1-tag' class='quote-tag'></p></div>");
+  }
+});
+
 $(document).ready(function() {
 
   $.ajax({
@@ -43,4 +51,7 @@ function shoveQuotes() {
     $(tempQtId).html(quotes_data[i].quote);
     $(tempQttId).html(tempTag);
   }
+
+  currentQuoteIndex = index - 5;
+  console.log(currentQuoteIndex);
 };
