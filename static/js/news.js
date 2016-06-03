@@ -41,7 +41,10 @@ function shoveQuotes() {
     console.log("QuoteID text: ", tempQtId);
     console.log("QuoteID tag: ", tempQttId);
 
-    $(tempQtId).html(quotes_data[i].quote);
-    $(tempQttId).html(quotes_data[i].first_name + " " quotes_data[i].last_name + ", " quotes_data[i].policy);
+    var tempTag = quotes_data[i].first_name + " " quotes_data[i].last_name + ", " quotes_data[i].policy;
+    console.log(tag);
+
+    //$(tempQtId).html(quotes_data[i].quote);
+    //$(tempQttId).html(tempTag);
   }
 };
