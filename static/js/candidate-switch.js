@@ -1,6 +1,4 @@
 $(function() {
-  var candidate_data_complete;
-
   var clinton_data;
   var sanders_data;
   var trump_data;
@@ -8,11 +6,13 @@ $(function() {
   var kasich_data;
 
   var candidate_data;
-  $.ajax({
-    type: 'get',
-    url: '/Qbios',
-    success: loadBios
-  });
+  JSON.parse(
+    $.ajax({
+      type: 'get',
+      url: '/Qbios',
+      success: loadBios
+    });
+  );
 
   function loadBios(data) {
     candidate_data = data;
