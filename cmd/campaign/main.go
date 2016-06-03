@@ -243,7 +243,7 @@ func countsHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func main() {
+func insert() {
 	port := os.Getenv("PORT")
 	if port == "" {
 		log.Fatal("$PORT must be set")
@@ -268,4 +268,5 @@ func main() {
 	server.ListenAndServe()
 
 	scrapeNews()
+	insert()
 }

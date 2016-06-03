@@ -14,7 +14,7 @@ func scrapeNews() {
 	defer db.Close()
 
 	// Prepare the insert statement to for use later in the program
-	stmt, err := db.Prepare("INSERT INTO Post VALUES (NULL, ?, ?, ?, ?, NULL, NULL, NULL, ?, ?)")
+	stmt, err := db.Prepare("INSERT INTO article (publisher, authorfirstname, authorlastname, datepublished, link, title) VALUES (?, ?, ?, ?, ?, ?);")
 	if err != nil {
 		log.Fatal(err)
 	}
