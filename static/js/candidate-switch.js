@@ -28,12 +28,12 @@ $(function() {
   var candidate_data;
   $.ajax({
     type: 'get',
-    url: '/bios',
+    url: '/Qbios',
     success: loadBios
   });
 
   function loadBios(data) {
-    candidate_data = data["candidates"]
+    candidate_data = data
   };
 
   console.log(candidate_data);
