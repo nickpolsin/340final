@@ -62,7 +62,7 @@ $(function() {
     };
   };
 
-  ajaxCall().done(function(response){
+  $.ajax.done(function(response){
     console.log("clintonData: ", clinton_data);
     console.log("sandersData: ", sanders_data);
     console.log("trumpData: ", trump_data);
