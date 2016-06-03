@@ -70,32 +70,42 @@ $(function() {
   console.log("kasichData: ", kasich_data);
 
   $("#bio-clinton").click(function() {
-    $("#candidate_name").html(clinton_data.name);
+    $("#candidate_name").html(clinton_data.first_name + " " + clinton_data.last_name);
     $("#candidate_img").attr("src", "../resources/img/"+clinton_data.img+".jpg");
     $("#candidate_bio").html(clinton_data.bio);
+    $("#candidate-occupation-data").html(clinton_data.occupation);
+    $("#candidate-party-data").html(clinton_data.party);
   });
 
   $("#bio-sanders").click(function() {
-    $("#candidate_name").html(sanders_data.name);
+    $("#candidate_name").html(sanders_data.first_name + " " + sanders_data.last_name);
     $("#candidate_img").attr("src", "../resources/img/"+sanders_data.img+".jpg");
     $("#candidate_bio").html(sanders_data.bio);
+    $("#candidate-occupation-data").html(sanders_data.occupation);
+    $("#candidate-party-data").html(sanders_data.party);
   });
 
   $("#bio-trump").click(function() {
-    $("#candidate_name").html(trump_data.name);
+    $("#candidate_name").html(trump_data.first_name + " " + trump_data.last_name);
     $("#candidate_img").attr("src", "../resources/img/"+trump_data.img+".jpg");
     $("#candidate_bio").html(trump_data.bio);
+    $("#candidate-occupation-data").html(trump_data.occupation);
+    $("#candidate-party-data").html(trump_data.party);
   });
 
   $("#bio-cruz").click(function() {
-    $("#candidate_name").html(cruz_data.name);
+    $("#candidate_name").html(cruz_data.first_name + " " + cruz_data.last_name);
     $("#candidate_img").attr("src", "../resources/img/"+cruz_data.img+".jpg");
     $("#candidate_bio").html(cruz_data.bio);
+    $("#candidate-occupation-data").html(cruz_data.occupation);
+    $("#candidate-party-data").html(cruz_data.party);
   });
 
   $("#bio-kasich").click(function() {
-    $("#candidate_name").html(kasich_data.name);
+    $("#candidate_name").html(kasich_data.first_name + " " + kasich_data.last_name);
     $("#candidate_img").attr("src", "../resources/img/"+kasich_data.img+".jpg");
     $("#candidate_bio").html(kasich_data.bio);
+    $("#candidate-occupation-data").html(kasich_data.occupation);
+    $("#candidate-party-data").html(kasich_data.party);
   });
 });
