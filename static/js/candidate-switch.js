@@ -81,6 +81,8 @@ $(function() {
     console.log(quotes_data);
 
     for (obj in quotes_data.quotes) {
+      console.log("current obj: ",obj);
+
       if (obj.last_name = "Clinton") {
         clinton_data.quotes.push({policy: obj.policy, quote: obj.quote});
       } else if (obj.last_name = "Sander") {
