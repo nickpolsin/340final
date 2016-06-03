@@ -6,6 +6,12 @@ var kasich_data;
 
 var quotes_data;
 
+var clinton_quotes;
+var sanders_quotes;
+var trump_quotes;
+var cruz_quotes;
+var kasich_quotes;
+
 $(function() {
   var candidate_data;
   $.ajax({
@@ -80,7 +86,7 @@ $(function() {
     quotes_data = data;
     console.log(quotes_data);
 
-    for (var i = 0; i < quotes_data.quotes; i++) {
+    for (i = 0; i < quotes_data.quotes.length; i++) {
       console.log("current obj: ", quotes_data.quotes[i]);
 
       if (quotes_data.quotes[i].last_name = "Clinton") {
