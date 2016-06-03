@@ -22,6 +22,38 @@ type Candidate struct {
 	Occupation       string `json:"occupation"`
 }
 
+// Quote stores policyname and actual quote text
+type Quote struct {
+	Policyname string `json:"policy"`
+	Quote      string `json:"quote"`
+}
+
+func getQuotes() []Quote {
+	var quotes []Quote
+
+	rows, err := db.Query("SELECT policyname, quote FROM candidatepolicy;")
+	if err != nil {
+		return nil
+	}
+
+	for rows.Next() {
+		// for each row, we create an empty Location object
+		var quote Quote
+
+		// go can scan the columns returned from the select directly into the properties from our object
+		// we need &loc.xxx so that scan can update the properties in memory (&loc.Name means address of the Name property for this instance of loc)
+		err = rows.Scan(&quote.Policyname, &quote.Quote)
+		if err != nil {
+			return nil
+		}
+		// append each intermediate loc to our array
+		quotes = append(quotes, quote)
+	}
+	rows.Close()
+
+	return quotes
+}
+
 // keeping it simple we'll hard code the query
 func getCandidates() []Candidate {
 	// Store the results
@@ -75,6 +107,28 @@ func candidatesHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
+func quotesHandler(w http.ResponseWriter, r *http.Request) {
+	switch r.Method {
+	default: // We're only supporting GET in this incarnation
+		quotes := getQuotes()
+
+		// This struct holds all of the context that my index template needs to render
+		context := struct {
+			Quotes []Quote `json:"quotes"`
+		}{
+			quotes,
+		}
+
+		jsonified, err := json.Marshal(context)
+		if err != nil {
+			panic(err)
+		}
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(jsonified)
+	}
+
+}
+
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -94,5 +148,6 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	http.HandleFunc("/Qbios", candidatesHandler)
+	http.HandleFunc("/Qquotes", quotesHandler)
 	server.ListenAndServe()
 }
