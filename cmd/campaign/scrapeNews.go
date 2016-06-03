@@ -37,10 +37,11 @@ func scrapeNews() {
 	doc.Find(".g-story").Each(func(i int, s *goquery.Selection) {
 
 		// extract individual fields with GoQuery helpers
-		title := s.Find(".g-story-hed").Find("a").Text()
-		link, _ := s.Find(".g-story-hed").Find("a").Attr("href")
+		hed := s.Find(".g-story-hed")
+		title := hed.Find("a").Text()
+		link, _ := hed.Find("a").Attr("href")
 		author := s.Find(".g-byline").Text()
-		datepublished := s.Find(".g-story-hed").Find("a").Attr("href")
+		datepublished, _ := hed.Find("a").Attr("href")
 		publisher := "New York Times"
 
 		author = strings.Split(author, "By, ")[1]
