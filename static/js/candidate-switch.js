@@ -15,14 +15,14 @@ $(function() {
   });
 
   function loadBios(data) {
-    candidate_data = data.candiates;
+    candidate_data = data;
     console.log(candidate_data);
 
     clinton_data = {
-      first_name: candidate_data[0].first_name,
-      last_name: candidate_data[0].last_name,
-      occupation: candidate_data[0].occupation,
-      party: candidate_data[0].party,
+      first_name: data.candidate_data[0].first_name,
+      last_name: data.candidate_data[0].last_name,
+      occupation: data.candidate_data[0].occupation,
+      party: data.candidate_data[0].party,
       img: "clinton",
       bio: "&nbsp;&nbsp;&nbsp;&nbsp;Hillary Diane Rodham Clinton (born October 26, 1947) is an American politician and a candidate for the Democratic presidential nomination in the 2016 election. She served as the 67th United States Secretary of State from 2009 to 2013, the junior United States Senator representing New York from 2001 to 2009, First Lady of the United States during the presidency of Bill Clinton from 1993 to 2001, and First Lady of Arkansas for twelve years. <br><br> &nbsp;&nbsp;&nbsp;&nbsp;Hillary Rodham grew up in the Chicago area. She attended Wellesley College, graduating in 1969, and earned a J.D. from Yale Law School in 1973. After serving as a congressional legal counsel, she moved to Arkansas, marrying Bill Clinton in 1975. In 1977, she co-founded Arkansas Advocates for Children and Families. She was appointed the first female chair of the Legal Services Corporation in 1978, and, the following year, became the first woman partner at Rose Law Firm. As First Lady of Arkansas (1979–81, 1983–92), she led a task force whose recommendations helped reform Arkansas' public schools, and served on the boards of corporations including Wal-Mart. <br><br> &nbsp;&nbsp;&nbsp;&nbsp;As First Lady of the United States, Clinton led the failed effort to enact the Clinton health plan of 1993. In 1997 and 1999, she helped create programs for children's health insurance, adoption, and foster care. The only first lady to have been subpoenaed, she faced a federal grand jury in 1996 regarding the Whitewater controversy; no charges were brought against her related to this or any other controversies in her life. Her marriage endured the Lewinsky scandal of 1998, and overall her role as first lady drew a polarized response from the public. <br><br> &nbsp;&nbsp;&nbsp;&nbsp;Clinton was elected in 2000 as the first female senator from New York, the only first lady ever to have sought elective office. Following the September 11 attacks, she voted to approve the war in Afghanistan. She also voted for the Iraq Resolution (which she later regretted), sought to hasten the withdrawal of U.S. troops from Iraq, and opposed the Iraq War troop surge of 2007 (which she later commended). She voted against the tax cuts of 2001 and 2003, and voted against John Roberts and Samuel Alito for the United States Supreme Court, filibustering the latter. She was re-elected to the Senate in 2006. Running for president in 2008, she won far more delegates than any previous female candidate, but lost the Democratic nomination to Barack Obama. <br><br> &nbsp;&nbsp;&nbsp;&nbsp;As Secretary of State in the Obama administration from 2009 to 2013, Clinton responded to the Arab Spring, during which she advocated the U.S. military intervention in Libya. While accepting responsibility for security lapses related to the 2012 Benghazi attack, she said she had no direct role in consulate security prior to that attack. Leaving office after Obama's first term, she authored her fifth book and undertook speaking engagements before announcing her second run for the Democratic nomination, in the 2016 presidential election."
     };
