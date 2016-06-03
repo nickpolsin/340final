@@ -29,7 +29,7 @@ $(function() {
   $.ajax({
     type: 'get',
     url: '/bios',
-    success: loadBios(data)
+    success: loadBios
   });
 
   function loadBios(data) {

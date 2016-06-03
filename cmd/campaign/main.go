@@ -93,6 +93,6 @@ func main() {
 	http.Handle("/", fs)
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	http.HandleFunc("/bios", candidatesHandler)
+	http.HandleFunc("/Qbios", candidatesHandler)
 	server.ListenAndServe()
 }
