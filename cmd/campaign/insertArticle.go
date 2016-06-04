@@ -14,7 +14,7 @@ import (
 	_ "github.com/lib/pq"
 )
 
-func main() {
+func insertArticle() {
 	port := os.Getenv("PORT")
 	if port == "" {
 		log.Fatal("$PORT must be set")
