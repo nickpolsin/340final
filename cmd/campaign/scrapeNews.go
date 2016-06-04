@@ -1,6 +1,6 @@
 package main
 
-import (
+/*import (
 	"fmt"
 	"log"
 	"net/http"
@@ -75,3 +75,4 @@ func scrapeNews() {
 
 	fmt.Println("Completed import")
 }
+*/

@@ -277,7 +277,7 @@ func main() {
 
 	fmt.Println("%s", "In main.go, before scrape")
 
-	scrapeNews()
+	//scrapeNews()
 
 	fmt.Println("%s", "In main.go, after scrape")
 
