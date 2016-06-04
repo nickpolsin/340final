@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"encoding/json"
+	"html/template"
 	"log"
 	"net/http"
 	"os"
@@ -243,6 +244,25 @@ func countsHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
+func newArticleHandler(w http.ResponseWriter, r *http.Request) {
+	form, _ := template.ParseFiles("static/admin.html")
+
+	switch r.Method {
+	case "GET": // No form data to retrieve
+		form.Execute(w, "nothing")
+	case "POST": // Handle form data and update the page
+		r.ParseForm()
+		publisher := r.FormValue("publisher")
+		authorfirstname := r.FormValue("authorfirstname")
+		authorlastname := r.FormValue("authorlastname")
+		datepublished := r.FormValue("datepublished")
+		link := r.FormValue("link")
+		title := r.FormValue("title")
+
+		db.Query("INSERT INTO article (publisher, authorfirstname, authorlastname, datepublished, link, title) VALUES ($1, $2, $3, $4, $5, $6);", publisher, authorfirstname, authorlastname, datepublished, link, title)
+	}
+}
+
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -265,8 +285,7 @@ func main() {
 	http.HandleFunc("/Qquotes", quotesHandler)
 	http.HandleFunc("/Qarticles", articlesHandler)
 	http.HandleFunc("/Qcounts", countsHandler)
-
-	insertArticle()
+	http.HandleFunc("Qnewarticle", newArticleHandler)
 
 	server.ListenAndServe()
 }
