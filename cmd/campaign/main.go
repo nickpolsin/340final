@@ -245,6 +245,8 @@ func countsHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	fmt.Println("%s", "In main.go, top")
+
 	port := os.Getenv("PORT")
 	if port == "" {
 		log.Fatal("$PORT must be set")
@@ -260,17 +262,24 @@ func main() {
 	}
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/", fs)
+	fmt.Println("%s", "In main.go, after fs")
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
+	fmt.Println("%s", "In main.go, after static fs")
 
 	http.HandleFunc("/Qbios", candidatesHandler)
+	fmt.Println("%s", "In main.go, after qbios")
 	http.HandleFunc("/Qquotes", quotesHandler)
+	fmt.Println("%s", "In main.go, after qquotes")
 	http.HandleFunc("/Qarticles", articlesHandler)
+	fmt.Println("%s", "In main.go, after qarticles")
 	http.HandleFunc("/Qcounts", countsHandler)
-	server.ListenAndServe()
+	fmt.Println("%s", "In main.go, after qcounts")
 
-	fmt.Printf("%s", "In main.go")
+	fmt.Println("%s", "In main.go, before scrape")
 
 	scrapeNews()
 
-	fmt.Printf("%s", "In main.go")
+	fmt.Println("%s", "In main.go, after scrape")
+
+	server.ListenAndServe()
 }
