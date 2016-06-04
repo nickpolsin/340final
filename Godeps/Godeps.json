@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/alexsirr/info340-group4",
+	"ImportPath": "github.com/JacksonMaxfield/campaign-manager",
 	"GoVersion": "go1.6",
 	"GodepVersion": "v62",
 	"Packages": [
