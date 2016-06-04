@@ -267,5 +267,7 @@ func main() {
 	http.HandleFunc("/Qcounts", countsHandler)
 	server.ListenAndServe()
 
+	log.Printf("%s", "In main.go")
+
 	scrapeNews()
 }

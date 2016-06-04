@@ -10,20 +10,27 @@ import (
 )
 
 func scrapeNews() {
+
+	log.Printf("%s", "Hello World!")
+
 	// initialize the database
 	defer db.Close()
+	log.Printf("%s", "Database defer closed")
 
 	// Prepare the insert statement to for use later in the program
 	stmt, err := db.Prepare("INSERT INTO article (publisher, authorfirstname, authorlastname, datepublished, link, title) VALUES (?, ?, ?, ?, ?, ?);")
 	if err != nil {
 		log.Fatal(err)
 	}
+	log.Printf("%s", "Insert prepared")
 
 	// read the response
 	resp, err := http.Get("http://www.nytimes.com/interactive/2016/us/elections/election-2016.html")
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	log.Printf("%s", "get NY Times")
 	// we are always expected to close out the body of a response when using the net/http package.
 	defer resp.Body.Close()
 
@@ -32,6 +39,8 @@ func scrapeNews() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	log.Printf("%s", "database queried")
 
 	// find DOM containers with the blog_article CSS class and loop over selection
 	doc.Find(".g-story").Each(func(i int, s *goquery.Selection) {

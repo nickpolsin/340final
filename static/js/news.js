@@ -40,6 +40,26 @@ $(document).ready(function() {
   shoveQuotes();
 });
 
+function formatDate(utcDate) {
+  var fixed = utcDate.substr(0, 10);
+  var units = fixed.split("-");
+
+  var months = {
+    January: "01",
+    February: "02",
+    March: "03",
+    April: "04",
+    May: "05",
+    June: "06",
+    July: "07",
+    August: "08",
+    September: "09",
+    October: "10"
+  }
+
+  return null;
+}
+
 function shoveArticles() {
   var index = articles_data.length - 1;
 
