@@ -29,7 +29,7 @@ func insertArticle() {
 	}
 	router := gin.New()
 	router.Use(gin.Logger())
-	router.LoadHTMLGlob("static/*")
+	router.LoadHTMLGlob("html/*")
 	router.Static("/static", "static")
 
 	router.GET("/new-article.html", func(c *gin.Context) {
