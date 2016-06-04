@@ -51,10 +51,10 @@ func scrapeNews() {
 		dateArr := strings.Split(datepublished, "/")
 		datepublished = dateArr[3] + "-" + dateArr[4] + "-" + dateArr[5]
 
-		fmt.Printf("%v", authorfirstname)
-		fmt.Printf("%v", authorlastname)
-		fmt.Printf("%v", title)
-		fmt.Printf("%v", datepublished)
+		log.Printf("%s", authorfirstname)
+		log.Printf("%s", authorlastname)
+		log.Printf("%s", title)
+		log.Printf("%s", datepublished)
 
 		// insert the post into the database using the prepared statement
 		_, err := stmt.Exec(publisher, authorfirstname, authorlastname, datepublished, link, title)
