@@ -11,18 +11,18 @@ import (
 
 func scrapeNews() {
 
-	log.Printf("%s", "Hello World!")
+	fmt.Printf("%s", "Hello World!")
 
 	// initialize the database
 	defer db.Close()
-	log.Printf("%s", "Database defer closed")
+	fmt.Printf("%s", "Database defer closed")
 
 	// Prepare the insert statement to for use later in the program
 	stmt, err := db.Prepare("INSERT INTO article (publisher, authorfirstname, authorlastname, datepublished, link, title) VALUES (?, ?, ?, ?, ?, ?);")
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Printf("%s", "Insert prepared")
+	fmt.Printf("%s", "Insert prepared")
 
 	// read the response
 	resp, err := http.Get("http://www.nytimes.com/interactive/2016/us/elections/election-2016.html")
@@ -30,7 +30,7 @@ func scrapeNews() {
 		log.Fatal(err)
 	}
 
-	log.Printf("%s", "get NY Times")
+	fmt.Printf("%s", "get NY Times")
 	// we are always expected to close out the body of a response when using the net/http package.
 	defer resp.Body.Close()
 
@@ -40,7 +40,7 @@ func scrapeNews() {
 		log.Fatal(err)
 	}
 
-	log.Printf("%s", "database queried")
+	fmt.Printf("%s", "database queried")
 
 	// find DOM containers with the blog_article CSS class and loop over selection
 	doc.Find(".g-story").Each(func(i int, s *goquery.Selection) {
@@ -60,10 +60,10 @@ func scrapeNews() {
 		dateArr := strings.Split(datepublished, "/")
 		datepublished = dateArr[3] + "-" + dateArr[4] + "-" + dateArr[5]
 
-		log.Printf("%s", authorfirstname)
-		log.Printf("%s", authorlastname)
-		log.Printf("%s", title)
-		log.Printf("%s", datepublished)
+		fmt.Printf("%s", authorfirstname)
+		fmt.Printf("%s", authorlastname)
+		fmt.Printf("%s", title)
+		fmt.Printf("%s", datepublished)
 
 		// insert the post into the database using the prepared statement
 		_, err := stmt.Exec(publisher, authorfirstname, authorlastname, datepublished, link, title)
@@ -72,5 +72,5 @@ func scrapeNews() {
 		}
 	})
 
-	fmt.Println("Completed import")
+	fmt.Printf("Completed import")
 }

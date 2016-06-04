@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -267,7 +268,9 @@ func main() {
 	http.HandleFunc("/Qcounts", countsHandler)
 	server.ListenAndServe()
 
-	log.Printf("%s", "In main.go")
+	fmt.Printf("%s", "In main.go")
 
 	scrapeNews()
+
+	fmt.Printf("%s", "In main.go")
 }
