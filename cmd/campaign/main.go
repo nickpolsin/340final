@@ -285,7 +285,7 @@ func main() {
 	http.HandleFunc("/Qquotes", quotesHandler)
 	http.HandleFunc("/Qarticles", articlesHandler)
 	http.HandleFunc("/Qcounts", countsHandler)
-	http.HandleFunc("Qnewarticle", newArticleHandler)
+	http.HandleFunc("/Qnewarticle", newArticleHandler)
 
 	server.ListenAndServe()
 }
