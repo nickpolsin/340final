@@ -257,9 +257,9 @@ func main() {
 	server := http.Server{
 		Addr: ":" + port,
 	}
-	fs := http.FileServer(http.Dir("static"))
+	fs := http.FileServer(http.Dir("html"))
 	http.Handle("/", fs)
-	http.Handle("/static/", http.StripPrefix("/static/", fs))
+	http.Handle("/html/", http.StripPrefix("/html/", fs))
 
 	http.HandleFunc("/Qbios", candidatesHandler)
 	http.HandleFunc("/Qquotes", quotesHandler)
