@@ -62,6 +62,21 @@
       color: #886308;
       cursor: pointer; }
 
+.admin-link-box {
+  margin: 10px 10px 10px auto;
+  text-align: right; }
+  .admin-link-box .admin-link {
+    border-bottom: 1px solid transparent;
+    color: #D6D6D6;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0px;
+    text-decoration: none; }
+    .admin-link-box .admin-link:hover {
+      border-bottom: 1px solid #D6D6D6; }
+    .admin-link-box .admin-link:visited {
+      color: #D6D6D6; }
+
 .container-60 {
   margin: 0px auto 0px auto;
   width: 60%; }
@@ -91,6 +106,14 @@
 .col-left, .col-right {
   width: 40%;
   margin: 0px auto 0px auto; }
+
+.article-form {
+  text-align: left; }
+  .article-form .artifle-field .article-input {
+    margin: 4px auto 4px auto; }
+
+.locked {
+  display: none; }
 
 body {
   color: #222;

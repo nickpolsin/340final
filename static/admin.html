@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Admin</title>
+    <link rel="icon" href="resources/img/icon.png">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="js/new-article.js"></script>
+  </head>
+  <body>
+    <div class="container-60">
+      <div class="nav-bar">
+        <nav>
+          <a href="index.html"><img id="site-logo" src="resources/img/logo.jpg" alt="logo" /></a>
+          <a id="d-counts" href="index.html" class="nav-link transition-all-100">Delegate Count</a>
+          <a id="bios" href="bios.html" class="nav-link transition-all-100">Candidate Information</a>
+          <a id="news" href="news.html" class="nav-link transition-all-100">News and Events</a>
+        </nav>
+        <hr class="nav-bar-hr">
+      </div>
+
+      <div class="content-container">
+        <div id="article-form">
+          <h1 class="page-title">Add Article to Database</h1>
+
+          <div class="article-field">Publisher: <input class="article-input" type="text" id="article-submit-publisher" maxlength=50 required/></div>
+          <div class="article-field">Author First Name: <input class="article-input" type="text" id="article-submit-authorfirstname" maxlength=20 required/></div>
+          <div class="article-field">Author Last Name: <input class="article-input" type="text" id="article-submit-authorlastname" maxlength=20 required/></div>
+          <div class="article-field">Date Published: <input class="article-input" type="text" id="article-submit-datepublished" maxlength=10 required/></div>
+          <div class="article-field">Link: <input class="article-input" type="text" id="article-submit-link" maxlength=200 required/></div>
+          <div class="article-field">Title: <input class="article-input" type="text" id="article-submit-title" malength=100 required/></div>
+          <div class="article-field"><button id="article-add">Add Article</button></div>
+          <div id="result"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
