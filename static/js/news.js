@@ -54,7 +54,7 @@ function shoveArticles() {
       tempImgSource = "resources/img/nyt.png";
     }
 
-    var tempTag = "<b>" + articles_data[i].title + "</b><br>by: " + articles_data[i].author_fn.toLowerCase() + " " + articles_data[i].author_ln.toLowerCase() + ", published: " + articles_data[i].pub_date.substr(0, 6);
+    var tempTag = "<b>" + articles_data[i].title + "</b><br>by: " + articles_data[i].author_fn.toLowerCase() + " " + articles_data[i].author_ln.toLowerCase() + "<br><em>published: " + articles_data[i].pub_date.substr(0, 10) + "</em>";
 
     $(tempAtleImgId).attr("src", tempImgSource);
     $(tempAtleTagId).html(tempTag);
