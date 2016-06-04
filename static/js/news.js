@@ -54,10 +54,20 @@ function formatDate(utcDate) {
     July: "07",
     August: "08",
     September: "09",
-    October: "10"
+    October: "10",
+    November: "11",
+    December: "12"
   }
 
-  return null;
+  var finalString = units[2];
+  for (var attr in months) {
+    if (months[attr] == units[1]) {
+      finalString += (" " + attr);
+    }
+  }
+  finalString += (", " + units[0]);
+
+  return finalString;
 }
 
 function shoveArticles() {
@@ -74,7 +84,7 @@ function shoveArticles() {
       tempImgSource = "resources/img/nyt.png";
     }
 
-    var tempTag = "<b>" + articles_data[i].title + "</b><br>by: " + articles_data[i].author_fn.toLowerCase() + " " + articles_data[i].author_ln.toLowerCase() + "<br><em>published: " + articles_data[i].pub_date.substr(0, 10) + "</em>";
+    var tempTag = "<b>" + articles_data[i].title + "</b><br>by: " + articles_data[i].author_fn.toLowerCase() + " " + articles_data[i].author_ln.toLowerCase() + "<br><em>published: " + formatDate(articles_data[i].pub_date) + "</em>";
 
     $(tempAtleImgId).attr("src", tempImgSource);
     $(tempAtleTagId).html(tempTag);
