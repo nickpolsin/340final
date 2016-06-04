@@ -18,7 +18,7 @@ func scrapeNews() {
 	// Prepare the insert statement to for use later in the program
 	stmt, err := db.Prepare("INSERT INTO article (publisher, authorfirstname, authorlastname, datepublished, link, title) VALUES ($1, $2, $3, $4, $5, $6);")
 	if err != nil {
-		log.Fatal("THIS IS THE ERR: " + err)
+		log.Fatal(err)
 	}
 	fmt.Println("%s", "Insert prepared")
 
